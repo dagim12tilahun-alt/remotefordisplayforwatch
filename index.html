@@ -32,9 +32,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
-        // YOUR CORRECT PROJECT CREDENTIALS
-        const SUPABASE_URL = 'https://jcxwuesnqhrrfiimofqo.supabase.co';
-        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpjeHd1ZXNucWhycmZpaW1vZnFvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEyNTgwMTcsImV4cCI6MjA5NjgzNDAxN30.E-XcLdezKEfwUVkjQYeYwfsNdUZRw47B3aIbRRThMJg';
+        // UPDATED PROJECT CREDENTIALS
+        const SUPABASE_URL = 'https://jlzbdxjfamyzdhsnuqcg.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpsemJkeGpmYW15emRoc251cWNnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM2MjAwNDgsImV4cCI6MjEwOTE5NjA0OH0.qog1QYEhPgmXPIVKmB6gxN74OKkyG8G4OLqg7lpFMo8';
+        
         const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
         // Load the password from the phone's memory
@@ -65,7 +66,7 @@
             // Save the password to memory
             localStorage.setItem('mining_addr', pwd);
 
-            // Insert into your table
+            // Insert into remote_messages table
             const { error } = await supabaseClient
                 .from('remote_messages') 
                 .insert([{ content: content, password: pwd }]);
